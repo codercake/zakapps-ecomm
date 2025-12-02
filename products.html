@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Products</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <a href="index.html" class="logo">ZakApps</a>
+      <div class="nav-right">
+        <a href="products.html">Products</a>
+        <span id="cart-counter">Cart: <strong id="cart-count">0</strong></span>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Products</h1>
+
+    <section class="controls">
+      <label>
+        Sort By:
+        <select id="sort-select">
+          <option value="default">Default</option>
+          <option value="price-asc">Price: Low → High</option>
+          <option value="price-desc">Price: High → Low</option>
+          <option value="rating-desc">Rating: High → Low</option>
+        </select>
+      </label>
+
+      <label>
+        Filter by category:
+        <select id="category-filter">
+          <option value="all">All</option>
+        </select>
+      </label>
+
+      <label>
+        Rating:
+        <select id="rating-filter">
+          <option value="all">All</option>
+          <option value="4">4★ & up</option>
+          <option value="4.5">4.5★ & up</option>
+        </select>
+      </label>
+
+      <label>
+        Search:
+        <input id="search-input" placeholder="search product name">
+      </label>
+    </section>
+
+    <div id="products-grid" class="grid"></div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>

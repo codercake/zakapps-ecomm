@@ -1,0 +1,8 @@
+[
+    {"id":1,"name":"Comfy Chair","price":2499,"rating":4.2,"category":"furniture","image":"https://via.placeholder.com/300x200?text=Chair"},
+    {"id":2,"name":"Sleek Lamp","price":999,"rating":4.8,"category":"lighting","image":"https://via.placeholder.com/300x200?text=Lamp"},
+    {"id":3,"name":"Wooden Desk","price":5999,"rating":4.5,"category":"furniture","image":"https://via.placeholder.com/300x200?text=Desk"},
+    {"id":4,"name":"Wireless Headset","price":1999,"rating":4.0,"category":"electronics","image":"https://via.placeholder.com/300x200?text=Headset"},
+    {"id":5,"name":"Classic Mug","price":299,"rating":3.9,"category":"kitchen","image":"https://via.placeholder.com/300x200?text=Mug"}
+  ]
+  
