@@ -1,16 +1,412 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Order Placed</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Successful | Abokichi</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      body {
+        font-family: 'Raleway', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f1f8f6 0%, #e8f4f0 100%);
+        margin: 0;
+        padding: 20px;
+        overflow: hidden;
+      }
 
-<div class="order-box">
-  <h1>Thank you! (:</h1>
-  <p>Your order has been placed successfully.</p>
-  <a href="products.html">Continue Shopping</a>
-</div>
+      .container {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
 
-</body>
+      .success-container {
+        text-align: center;
+        padding: 50px 40px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(8, 61, 43, 0.1);
+        border: 1px solid #e0f0e9;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .success-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(90deg, #083d2b, #0a5c3b, #0c7c4e);
+      }
+
+      .success-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 25px;
+        background: linear-gradient(135deg, #0a5c3b, #0c7c4e);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: scaleIn 0.6s ease-out;
+      }
+
+      .success-icon svg {
+        width: 40px;
+        height: 40px;
+        fill: white;
+      }
+
+      .success-container h1 {
+        color: #083d2b;
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        letter-spacing: 0.5px;
+      }
+
+      .success-message {
+        font-size: 18px;
+        color: #3c4f4a;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        font-weight: 400;
+      }
+
+      .order-details {
+        background: #f9fdfb;
+        border-radius: 12px;
+        padding: 25px;
+        margin: 30px 0;
+        border: 1px solid #e0f0e9;
+        text-align: left;
+      }
+
+      .order-details h3 {
+        color: #083d2b;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .order-details h3 svg {
+        width: 20px;
+        height: 20px;
+        fill: #0a5c3b;
+      }
+
+      .detail-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e8f4f0;
+      }
+
+      .detail-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .detail-label {
+        color: #666;
+        font-weight: 500;
+        font-size: 15px;
+      }
+
+      .detail-value {
+        color: #083d2b;
+        font-weight: 600;
+        font-size: 15px;
+      }
+
+      .action-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: linear-gradient(135deg, #083d2b, #0a5c3b);
+        padding: 16px 32px;
+        border-radius: 50px;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        min-width: 180px;
+        box-shadow: 0 4px 15px rgba(8, 61, 43, 0.2);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(8, 61, 43, 0.3);
+        background: linear-gradient(135deg, #0a5c3b, #0c7c4e);
+      }
+
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: white;
+        padding: 16px 32px;
+        border-radius: 50px;
+        color: #083d2b;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        border: 2px solid #083d2b;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        min-width: 180px;
+      }
+
+      .btn-secondary:hover {
+        background: #f1f8f6;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 15px rgba(8, 61, 43, 0.1);
+      }
+
+      .btn-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      .confetti {
+        position: fixed;
+        width: 12px;
+        height: 12px;
+        background: #0c7c4e;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .footer-note {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #7a8c85;
+        text-align: center;
+        line-height: 1.5;
+      }
+
+      @keyframes scaleIn {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        70% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes confettiFall {
+        0% {
+          transform: translateY(-100px) rotate(0deg) translateX(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(100vh) rotate(720deg) translateX(calc(var(--tx) * 100px));
+          opacity: 0;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .success-container > * {
+        animation: fadeInUp 0.6s ease-out forwards;
+        animation-delay: calc(var(--order) * 0.1s);
+      }
+
+      @media (max-width: 768px) {
+        .success-container {
+          padding: 40px 25px;
+          margin: 20px;
+        }
+
+        .success-container h1 {
+          font-size: 28px;
+        }
+
+        .success-message {
+          font-size: 16px;
+        }
+
+        .action-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+          width: 100%;
+          max-width: 300px;
+        }
+
+        .order-details {
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .success-container {
+          padding: 30px 20px;
+        }
+
+        .success-container h1 {
+          font-size: 24px;
+        }
+
+        .success-icon {
+          width: 70px;
+          height: 70px;
+        }
+
+        .success-icon svg {
+          width: 35px;
+          height: 35px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="success-container">
+        <div class="success-icon" style="--order: 1;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+          </svg>
+        </div>
+
+        <h1 style="--order: 2;">Order Confirmed!</h1>
+        
+        <p class="success-message" style="--order: 3;">
+          Thank you for your purchase! Your order has been successfully placed and is being processed.
+        </p>
+
+        <div class="order-details" style="--order: 4;">
+          <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/>
+            </svg>
+            Order Summary
+          </h3>
+          
+          <div class="detail-item">
+            <span class="detail-label">Items</span>
+            <span class="detail-value">1 item</span>
+          </div>
+          
+          <div class="detail-item">
+            <span class="detail-label">Status</span>
+            <span class="detail-value" style="color: #0c7c4e;">Confirmed</span>
+          </div>
+          
+          <div class="detail-item">
+            <span class="detail-label">Estimated Delivery</span>
+            <span class="detail-value">3-5 Business Days</span>
+          </div>
+        </div>
+
+        <div class="action-buttons" style="--order: 5;">
+          <a href="index.html" class="btn-primary">
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+            Continue Shopping
+          </a>
+          
+          <a href="products.html" class="btn-secondary">
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#083d2b">
+              <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+            </svg>
+            View Orders
+          </a>
+        </div>
+
+    <script>
+      function createConfetti() {
+        const colors = ['#0a5c3b', '#0c7c4e', '#8bc34a', '#ff9800', '#03a9f4'];
+        const confettiContainer = document.createElement('div');
+        confettiContainer.style.position = 'fixed';
+        confettiContainer.style.top = '0';
+        confettiContainer.style.left = '0';
+        confettiContainer.style.width = '100%';
+        confettiContainer.style.height = '100%';
+        confettiContainer.style.pointerEvents = 'none';
+        confettiContainer.style.zIndex = '0';
+        document.body.appendChild(confettiContainer);
+        
+        for (let i = 0; i < 100; i++) {
+          const confetti = document.createElement('div');
+          confetti.className = 'confetti';
+          confetti.style.left = Math.random() * 100 + 'vw';
+          confetti.style.top = '-20px';
+          confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+          confetti.style.width = Math.random() * 8 + 6 + 'px';
+          confetti.style.height = confetti.style.width;
+          confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+          confetti.style.setProperty('--tx', Math.random() > 0.5 ? 1 : -1);
+          
+          confetti.style.animation = `confettiFall ${Math.random() * 3 + 2}s ease-out forwards`;
+          confetti.style.animationDelay = Math.random() * 1 + 's';
+          
+          confettiContainer.appendChild(confetti);
+          
+          setTimeout(() => {
+            confetti.remove();
+          }, 4000);
+        }
+        
+        setTimeout(() => {
+          confettiContainer.remove();
+        }, 4000);
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        createConfetti();
+        localStorage.setItem('cartCount', '0');
+        if (window.parent && window.parent.incrementCartCount) {
+          window.parent.incrementCartCount();
+        }
+      });
+    </script>
+  </body>
 </html>

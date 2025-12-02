@@ -1,71 +1,319 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Store Home</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abokichi</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+     <div class="mini-header">
+        <div class="mini-header-left">
+          <div class="currency-container">
+            <div class="currency">USD</div>
+            <img
+              src="assets//icons/down_arrow_icon.svg"
+              alt="arrow"
+              class="arrow-icon"
+            />
+          </div>
+          <div class="stores-container">
+            <img
+              src="assets/icons/location-pin.png"
+              alt="stores"
+              class="location-icon"
+            />
+            <div class="stores">Stores</div>
+          </div>
+        </div>
+        <div class="mini-header-right">
+          <a href="#" class="login-register">Login / Register</a>
+        </div>
+      </div>
 
-<header class="header">
-  <div class="header-top">
-    <span>Demo Store</span>
-    <span>Login</span>
-  </div>
+      <div class="main-header">
+        <div class="header-left">
+          <a href="index.html">
+            <img src="assets/images/abokichi-logo.png" alt="logo" class="logo" />
+          </a>
+        </div>
 
-  <div class="header-main">
-    <h1>ZakApps Store</h1>
-    <div class="nav-links">
-      <span>Home</span>
-      <span>Products</span>
-      <span>Categories</span>
-      <span>Contact</span>
+        <nav class="header-nav">
+          <a href="products.html"
+            >Shop <img src="assets/icons/black-down-arrow-icon.svg"
+          /></a>
+          <a href="#">Our Story</a>
+          <a href="#">Recipes</a>
+          <a href="#">Contact</a>
+        </nav>
+
+        <div class="header-icons">
+          <img src="assets/icons/search_icon.svg" class="icon" alt="search" />
+          <img
+            src="assets//icons/wishlist-icon.svg"
+            class="icon"
+            alt="wishlist"
+          />
+          <div class="cart-wrapper">
+            <img
+              src="assets//icons/bag_shopping_icon.svg"
+              class="icon"
+              alt="cart"
+            />
+            <span class="cart-count" id="cartCount">0</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="hero">
+        <div class="hero-left">
+          <img
+            src="assets/images/home/hero-1.png"
+            class="hero-img left-img"
+            alt=""
+          />
+          <img
+            src="assets/images/home/hero-2.png"
+            class="hero-img right-img"
+            alt=""
+          />
+        </div>
+
+        <div class="hero-right">
+          <h1 class="hero-title">
+            <span class="small-text">Nourish Yourself with</span><br />
+            <span class="big-text">MISO Goodness</span>
+          </h1>
+
+          <a href="products.html">
+            <button class="shop-btn">Shop now</button>
+          </a>
+
+          <p class="shipping-text">
+            <strong>Free shipping</strong> within the US for orders of $54 or
+            more
+          </p>
+        </div>
+      </section>
+
+      <section class="badges-row">
+        <div class="badge">
+          <img src="assets/icons/check_circle_icon.svg" alt="" />
+          <span>Vegan</span>
+        </div>
+
+        <div class="badge">
+          <img src="assets/icons/check_circle_icon.svg" alt="" />
+          <span>KETO-friendly</span>
+        </div>
+
+        <div class="badge">
+          <img src="assets/icons/check_circle_icon.svg" alt="" />
+          <span>Non-GMO</span>
+        </div>
+
+        <div class="badge">
+          <img src="assets/icons/check_circle_icon.svg" alt="" />
+          <span>Organic miso</span>
+        </div>
+
+        <div class="badge">
+          <img src="assets/icons/check_circle_icon.svg" alt="" />
+          <span>Gluten-Free</span>
+        </div>
+      </section>
+
+      <section class="story-recipes">
+        <div class="story-card">
+          <img src="assets/images/home/our-story.png" alt="" />
+          <h3>Our story</h3>
+        </div>
+
+        <div class="story-card">
+          <img src="assets/images/home/recipes.png" alt="" />
+          <h3>Recipes</h3>
+        </div>
+      </section>
+
+      <section class="best-sellers">
+        <div class="best-sellers-title">
+          <img
+            src="assets/images/home/bestseller-logo.png"
+            alt=""
+            class="bs-icon"
+          />
+          <h2>Best Sellers</h2>
+        </div>
+
+        <div class="products-row">
+          <a href="products.html" class="product-link">
+            <div class="product-card">
+              <img
+                src="assets/images/products/okazu.png"
+                class="product-img img1"
+                alt=""
+              />
+              <h3>OKAZU Lovers Set (230mL/12 jars)</h3>
+              <div class="price">
+                <span class="current">$135.00</span>
+                <span class="old">$167.88</span>
+              </div>
+              <div class="rating-row">
+                <div class="stars">
+                  <img src="assets/icons/ratings.svg" alt="" />
+                  <img src="assets/icons/ratings.svg" alt="" />
+                  <img src="assets/icons/ratings.svg" alt="" />
+                  <img src="assets/icons/ratings.svg" alt="" />
+                  <img src="assets/icons/ratings.svg" alt="" />
+                   
+                </div>
+                <span class="reviews">32 Reviews</span>
+              </div>
+            </div>
+          </a>
+          <a href="products.html" class="product-link">
+            <div class="product-card">
+              <img
+                src="assets/images/products/okazu-chilli.png"
+                class="product-img img2"
+                alt=""
+              />
+              <h3>OKAZU – CHILI MISO chili oil condiment (230mL)</h3>
+              <div class="price">
+                <span class="current">$13.99</span>
+              </div>
+              <div class="rating-row">
+                <div class="stars">
+                  <img src="assets/icons/ratings.svg" alt="" />
+                  <img src="assets/icons/ratings.svg" alt="" />
+                  <img src="assets/icons/ratings.svg" alt="" />
+                  <img src="assets/icons/ratings.svg" alt="" />
+                  <img src="assets/icons/ratings.svg" alt="" />
+                </div>
+                <span class="reviews">32 Reviews</span>
+              </div>
+            </div>
+          </a>
+          <a href="products.html" class="product-link">
+            <div class="product-card">
+              <img
+                src="assets/images/products/miso-soup.png"
+                class="product-img img3"
+                alt=""
+              />
+              <h3>Instant Miso Soup Tasting Set</h3>
+              <div class="price">
+                <span class="current">$19.99</span>
+                <span class="old">$24.00</span>
+              </div>
+              <div class="rating-row">
+                <div class="stars">
+                  <img src="assets/icons/ratings.svg" alt="" />
+                  <img src="assets/icons/ratings.svg" alt="" />
+                  <img src="assets/icons/ratings.svg" alt="" />
+                  <img src="assets/icons/ratings.svg" alt="" />
+                  <img src="assets/icons/ratings.svg" alt="" />
+                </div>
+                <span class="reviews">32 Reviews</span>
+              </div>
+            </div>
+          </a>
+          <a href="products.html" class="product-link">
+            <div class="product-card">
+              <img
+                src="assets/images/products/abo-matcha.png"
+                class="product-img img4"
+                alt=""
+              />
+              <h3>ABO Matcha: Uji matcha, Organic</h3>
+              <div class="price">
+                <span class="current">$34.00</span>
+              </div>
+              <div class="rating-row">
+                <div class="stars">
+                  <img src="assets/icons/ratings.svg" alt="" />
+                  <img src="assets/icons/ratings.svg" alt="" />
+                  <img src="assets/icons/ratings.svg" alt="" />
+                  <img src="assets/icons/ratings.svg" alt="" />
+                  <img src="assets/icons/ratings.svg" alt="" />
+                </div>
+                <span class="reviews">32 Reviews</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="full-banner">
+        <img
+          src="assets/images/home/static-video.png"
+          class="full-img"
+          alt=""
+        />
+      </section>
+
+      <section class="full-banner">
+        <img src="assets/images/home/clients.png" class="full-img" alt="" />
+      </section>
+
+      <footer class="footer">
+        <div class="footer-newsletter">
+          <div class="newsletter-left">
+            <img
+              src="assets/icons/send_chat_icon.svg"
+              class="paper-icon"
+              alt=""
+            />
+            <div>
+              <h3>SUBSCRIBE NEWSLETTER</h3>
+              <p>get the latest on sales, new releases and more..</p>
+            </div>
+          </div>
+
+          <div class="newsletter-right">
+            <input type="email" placeholder="Enter your mail" />
+            <button>SUBSCRIBE</button>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>LINKS</h4>
+            <a href="#">About us</a>
+            <a href="#">Contact us</a>
+            <a href="#">Customer Service</a>
+            <a href="#">FAQs</a>
+            <a href="#">Sitemap</a>
+          </div>
+
+          <div class="footer-column">
+            <h4>INFORMATION</h4>
+            <a href="#">Terms of Service</a>
+            <a href="#">Refund policy</a>
+            <a href="#">Press</a>
+          </div>
+
+          <div class="footer-payments">
+            <img
+              src="assets/images/home/payment-options.png"
+              alt="payment methods"
+            />
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-social">
+            <img src="assets/icons/facebook-icon.svg" alt="" />
+            <img src="assets/icons/twitter-icon.svg" alt="" />
+            <img src="assets/icons/instagram-icon.svg" alt="" />
+            <img src="assets/icons/yt-icon.svg" alt="" />
+          </div>
+
+          <div class="footer-copy">© 2025 Abokichi.</div>
+        </div>
+      </footer>
     </div>
-    <div class="icons">
-      🔍  
-      🛒 <span id="cart-count">0</span>
-    </div>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="hero-left">
-    <img src="assets/featured-1.jpg">
-  </div>
-  <div class="hero-right">
-    <h2>Find Your Perfect Products<br>Delivered with Ease</h2>
-    <button class="cta-btn" onclick="location.href='products.html'">Shop Now</button>
-    <p>Browse from our curated list of items across categories.</p>
-  </div>
-</section>
-
-<section class="featured-wrapper">
-  <h2 class="section-title">Featured Products</h2>
-  <div class="product-grid">
-    <div class="card">
-      <img src="assets/item1.jpg">
-      <h4>Sample Product A</h4>
-      <p>$49.00</p>
-    </div>
-
-    <div class="card">
-      <img src="assets/item2.jpg">
-      <h4>Sample Product B</h4>
-      <p>$29.00</p>
-    </div>
-
-    <div class="card">
-      <img src="assets/item3.jpg">
-      <h4>Sample Product C</h4>
-      <p>$19.00</p>
-    </div>
-
-    <div class="card">
-      <img src="assets/item4.jpg">
-      <h4>Sample Product D</h4>
-      <p>$89.00</p>
-    </div>
-  </div>
-</section>
-
-</body>
+    <script src="js/cart.js"></script>
+  </body>
 </html>

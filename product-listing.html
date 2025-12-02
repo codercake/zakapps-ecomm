@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details – Abokichi</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/product-listing.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="mini-header">
+        <div class="mini-header-left">
+          <div class="currency-container">
+            <div class="currency">USD</div>
+            <img
+              src="assets/icons/down_arrow_icon.svg"
+              class="arrow-icon"
+              alt=""
+            />
+          </div>
+
+          <div class="stores-container">
+            <img src="assets/icons/location-pin.png" class="location-icon" alt="" />
+            <div class="stores">Stores</div>
+          </div>
+        </div>
+
+        <div class="mini-header-right">
+          <a href="#" class="login-register">Login / Register</a>
+        </div>
+      </div>
+
+      <div class="main-header">
+        <div class="header-left">
+          <a href="index.html">
+            <img src="assets/images/abokichi-logo.png" alt="logo" class="logo" />
+          </a>
+        </div>
+
+        <nav class="header-nav">
+          <a href="products.html"
+            >Shop <img src="assets/icons/black-down-arrow-icon.svg" alt=""
+          /></a>
+          <a href="#">Our story</a>
+          <a href="#">Recipes</a>
+          <a href="#">Contact</a>
+        </nav>
+
+        <div class="header-icons">
+          <img src="assets/icons/search_icon.svg" class="icon" alt="" />
+          <img src="assets/icons/wishlist-icon.svg" class="icon" alt="" />
+          <div class="cart-wrapper">
+            <img src="assets/icons/bag_shopping_icon.svg" class="icon" alt="" />
+            <span class="cart-count" id="cartCount">0</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="product-detail-section">
+        <div class="product-breadcrumb">
+          <a href="products.html" class="breadcrumb-link">Shop</a> &gt;
+          <span id="product-breadcrumb-name">Product</span>
+        </div>
+
+        <div class="product-detail-wrapper">
+          <div class="product-gallery-container">
+            <div class="product-main-gallery">
+              <img id="product-main-img" src="" alt="Product main image" />
+            </div>
+
+            <div class="product-thumbnails" id="product-thumbnails"></div>
+          </div>
+
+          <div class="product-info-container">
+            <h1 id="product-title">Product title</h1>
+
+            <div class="product-price-row">
+              <span id="product-price" class="price-current"></span>
+              <span id="product-old-price" class="price-old"></span>
+            </div>
+
+            <div class="product-rating-row">
+              <div id="product-stars" class="stars"></div>
+              <span id="product-reviews" class="reviews-count"></span>
+            </div>
+
+            <p id="product-short-desc" class="product-short-desc">
+              Your new cooking BFF! You can add this to virtually everything. Try it on rice, on meat or tofu, in your burger, ramen and pretty much anything. These award winning products will have your taste buds lingering for more... and potentially create an addiction.
+
+              Chili OKAZU is an umami-rich chili, miso, and sesame oil based condiment often eaten with rice in Japan, which can also be used to top chicken, burgers, fish, eggs, potatoes, and more.
+              
+              Use it as a marinade or as an ingredient in your own homemade salad dressing, this condiment is versatile and we encourage you to experiment.
+              
+              OKAZU gained an initial following at farmers' markets in Toronto and has been featured in The Toronto Star, The National Post, Toronto Life, FoodiePages and a winner of the Foodie Pick Awards.
+              
+              
+              HEAT LEVEL:MILD-MEDIUM
+              
+              
+              INGREDIENTS: SUNFLOWER OIL, SESAME OIL, GARLIC, MISO PASTE (ORGANIC SOYBEANS, RICE, SALT), TAMARI SOY SAUCE (NON-GMO SOYBEANS, SALT, SUGAR), SUGAR, CHILI POWDER, WHITE SESAME SEEDS
+              
+              CHILI & SPICY OKAZU CONTAINS:SESAME, SOYBEANS. MAY CONTAIN: MUSTARD.
+              
+              CURRY OKAZU CONTAINS: SESAME, SOYBEANS, MUSTARD.
+              
+              
+              INGREDIENTS:
+              
+              PRODUCT SEPARATION IS NORMAL. REFRIGERATE AFTER OPENING.
+            </p>
+
+            <div class="product-actions">
+              <button id="addToCartBtn" class="btn add-to-cart">
+                ADD TO CART
+              </button>
+              <button id="buyNowBtn" class="btn buy-now">BUY NOW</button>
+            </div>
+
+            <div class="product-meta">
+              <button class="wishlist-btn">
+                <img
+                  src="assets/icons/wishlist-icon.svg"
+                  class="wishlist-icon"
+                  alt="Add to wishlist"
+                />
+                WISHLIST
+              </button>
+
+              <div class="share-container">
+                SHARE:
+                <img
+                  src="assets/icons/facebook-icon-black.svg"
+                  class="share-icon"
+                  alt="Share on Facebook"
+                />
+                <img
+                  src="assets/icons/twitter-icon-black.svg"
+                  class="share-icon"
+                  alt="Share on Twitter"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-detail-tabs">
+          <nav class="tabs-navigation">
+            <button class="tab-btn active" data-tab="description">
+              DESCRIPTION
+            </button>
+            <button class="tab-btn" data-tab="reviews">REVIEWS</button>
+            <button class="tab-btn" data-tab="videos">VIDEOS</button>
+            <button class="tab-btn" data-tab="comments">COMMENTS</button>
+          </nav>
+
+          <div class="tabs-content-container">
+            <div id="description" class="tab-panel active">
+              <p>
+                Your new cooking BFF! You can add this to virtually everything.
+                Try it on rice, on meat or tofu, in your burger, ramen and
+                pretty much anything. These award winning products will have
+                your taste buds lingering for more... and potentially create an
+                addiction.
+              </p>
+
+              <p>
+                Chili OKAZU is an umami-rich chili, miso, and sesame oil based
+                condiment often eaten with rice in Japan, which can also be used
+                to top chicken, burgers, fish, eggs, potatoes, and more.
+              </p>
+
+              <p>
+                Use it as a marinade or as an ingredient in your own homemade
+                salad dressing, this condiment is versatile and we encourage you
+                to experiment.
+              </p>
+
+              <p>
+                OKAZU gained an initial following at farmers' markets in Toronto
+                and has been featured in The Toronto Star, The National Post,
+                Toronto Life, FoodiePages and a winner of the Foodie Pick
+                Awards.
+              </p>
+
+              <br />
+
+              <p>HEAT LEVEL:MILD-MEDIUM</p>
+
+              <br />
+
+              <p>
+                INGREDIENTS: SUNFLOWER OIL, SESAME OIL, GARLIC, MISO PASTE
+                (ORGANIC SOYBEANS, RICE, SALT), TAMARI SOY SAUCE (NON-GMO
+                SOYBEANS, SALT, SUGAR), SUGAR, CHILI POWDER, WHITE SESAME SEEDS
+              </p>
+
+              <p>
+                CHILI & SPICY OKAZU CONTAINS:SESAME, SOYBEANS. MAY CONTAIN:
+                MUSTARD.
+              </p>
+
+              <p>CURRY OKAZU CONTAINS: SESAME, SOYBEANS, MUSTARD.</p>
+
+              <br />
+
+              <p>INGREDIENTS:</p>
+              <p>PRODUCT SEPARATION IS NORMAL. REFRIGERATE AFTER OPENING.</p>
+              <br />
+              <br />
+            </div>
+
+            <div id="reviews" class="tab-panel">No reviews yet.</div>
+            <div id="videos" class="tab-panel">No videos.</div>
+            <div id="comments" class="tab-panel">No comments.</div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="product-detail-footer">
+        <div class="footer-top-section">
+          <div class="footer-links-left">
+            <p>LINKS</p>
+            <a href="#">About us</a>
+            <a href="#">Contact us</a>
+            <a href="#">Customer Service</a>
+            <a href="#">FAQs</a>
+            <a href="#">Sitemap</a>
+          </div>
+
+          <div class="footer-links-right">
+            <p>INFORMATION</p>
+            <a href="#">Terms of Service</a>
+            <a href="#">Refund policy</a>
+            <a href="#">Press</a>
+          </div>
+
+          <div class="footer-payments">
+            <img src="assets/images/home/payment-options.png" alt="Accepted Payment Methods" />
+          </div>
+        </div>
+
+        <div class="footer-bottom-section">
+          <div class="footer-social">
+            <img src="assets/icons/facebook-icon.svg" alt="Facebook" />
+            <img src="assets/icons/twitter-icon.svg" alt="Twitter" />
+            <img src="assets/icons/instagram-icon.svg" alt="Instagram" />
+            <img src="assets/icons/yt-icon.svg" alt="YouTube" />
+          </div>
+
+          <div class="footer-copyright">© 2025 Abokichi.</div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/details.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>

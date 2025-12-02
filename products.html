@@ -1,61 +1,239 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Products</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <nav>
-      <a href="index.html" class="logo">ZakApps</a>
-      <div class="nav-right">
-        <a href="products.html">Products</a>
-        <span id="cart-counter">Cart: <strong id="cart-count">0</strong></span>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products – Abokichi</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/products.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="mini-header">
+        <div class="mini-header-left">
+          <div class="currency-container">
+            <div class="currency">USD</div>
+            <img
+              src="assets/icons/down_arrow_icon.svg"
+              class="arrow-icon"
+              alt=""
+            />
+          </div>
+
+          <div class="stores-container">
+            <img src="assets/icons/location-pin.png" class="location-icon" alt="" />
+            <div class="stores">Stores</div>
+          </div>
+        </div>
+
+        <div class="mini-header-right">
+          <a href="#" class="login-register">Login / Register</a>
+        </div>
       </div>
-    </nav>
-  </header>
 
-  <main class="container">
-    <h1>Products</h1>
+      <div class="main-header">
+        <div class="header-left">
+          <a href="index.html">
+            <img src="assets/images/abokichi-logo.png" alt="logo" class="logo" />
+          </a>
+        </div>
 
-    <section class="controls">
-      <label>
-        Sort By:
-        <select id="sort-select">
-          <option value="default">Default</option>
-          <option value="price-asc">Price: Low → High</option>
-          <option value="price-desc">Price: High → Low</option>
-          <option value="rating-desc">Rating: High → Low</option>
-        </select>
-      </label>
+        <nav class="header-nav">
+          <a href="#"
+            >Shop <img src="assets/icons/black-down-arrow-icon.svg" alt=""
+          /></a>
+          <a href="#">Our story</a>
+          <a href="#">Recipes</a>
+          <a href="#">Contact</a>
+        </nav>
 
-      <label>
-        Filter by category:
-        <select id="category-filter">
-          <option value="all">All</option>
-        </select>
-      </label>
+        <div class="header-icons">
+          <img src="assets/icons/search_icon.svg" class="icon" alt="" />
+          <img src="assets/icons/wishlist-icon.svg" class="icon" alt="" />
+          <div class="cart-wrapper">
+            <img src="assets/icons/bag_shopping_icon.svg" class="icon" alt="" />
+            <span class="cart-count" id="cartCount">0</span>
+          </div>
+        </div>
+      </div>
 
-      <label>
-        Rating:
-        <select id="rating-filter">
-          <option value="all">All</option>
-          <option value="4">4★ & up</option>
-          <option value="4.5">4.5★ & up</option>
-        </select>
-      </label>
+      <section class="product-listing-section">
+        <div class="banner-section">
+          <img
+            src="assets/images/products/banner.png"
+            class="banner-img"
+            alt="Products Banner"
+          />
+        </div>
 
-      <label>
-        Search:
-        <input id="search-input" placeholder="search product name">
-      </label>
-    </section>
+        <div class="product-content">
+          <div class="product-count-container">
+            Products <span class="product-count">(12)</span>
+          </div>
 
-    <div id="products-grid" class="grid"></div>
-  </main>
+          <div class="filter-controls-bar">
+            <div class="left-controls">
+              <button class="filter-btn">
+                <img src="assets/icons/filter-icon.svg" alt="Filter" />
+                FILTER
+              </button>
 
-  <script src="js/main.js"></script>
-  <script src="js/products.js"></script>
-</body>
+              <div class="view-toggle-icons">
+                <img
+                  src="assets/icons/grid-icon.png"
+                  class="view-icon active grid-icon"
+                  alt="Grid View"
+                />
+                <img
+                  src="assets/icons/list-icon.png"
+                  class="view-icon list-icon"
+                  alt="List View"
+                />
+              </div>
+            </div>
+
+            <div class="right-controls">
+              <label class="sort-label">Sort By:</label>
+              <div class="sort-select-wrapper">
+                <select class="sort-dropdown" id="sortDropdown">
+                  <option value="az" selected>Alphabetically,A-Z</option>
+                  <option value="za">Alphabetically,Z-A</option>
+                  <option value="low-high">Price Low to High</option>
+                  <option value="high-low">Price High to Low</option>
+                </select>
+                <img
+                  src="assets/icons/down_arrow_icon.svg"
+                  class="sort-arrow"
+                  alt=""
+                />
+              </div>
+            </div>          
+          </div>
+
+          <div class="filter-panel" id="FilterPanel">
+            <div class="filter-section">
+              <h4>Categories</h4>
+              <label
+                ><input
+                  type="checkbox"
+                  class="filter-category"
+                  value="Chili oil/Okazu"
+                />
+                Chili oil/Okazu</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  class="filter-category"
+                  value="Miso Soup"
+                />
+                Miso Soup</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  class="filter-category"
+                  value="Instant Matcha"
+                />
+                Instant Matcha</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  class="filter-category"
+                  value="Coffee"
+                />
+                Coffee</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  class="filter-category"
+                  value="Greeting Card"
+                />
+                Greeting Card</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  class="filter-category"
+                  value="Coming Soon"
+                />
+                Coming Soon</label
+              >
+            </div>
+
+            <div class="filter-section">
+              <h4>Type</h4>
+              <label
+                ><input
+                  type="checkbox"
+                  class="filter-type"
+                  value="Single Pack"
+                />
+                Single Pack</label
+              >
+              <label
+                ><input type="checkbox" class="filter-type" value="Multi Set" />
+                Multi Set</label
+              >
+            </div>
+
+
+            <div class="filter-section">
+              <h4>Flavours</h4>
+            </div>
+          </div>
+
+          <hr class="content-separator" />
+
+          <div class="product-grid" id="productGrid">
+          </div>
+          <p class="no-products-message" id="noProductsMessage">
+            No products found for the selected filters 
+          </p>
+        </div>
+
+        <footer class="product-listing-footer">
+          <div class="footer-top">
+            <div class="footer-links-left">
+              <p>LINKS</p>
+              <a href="#">About us</a>
+              <a href="#">Contact us</a>
+              <a href="#">Customer Service</a>
+              <a href="#">FAQs</a>
+              <a href="#">Sitemap</a>
+            </div>
+
+            <div class="footer-links-right">
+              <p>INFORMATION</p>
+              <a href="#">Terms of Service</a>
+              <a href="#">Refund policy</a>
+              <a href="#">Press</a>
+            </div>
+
+            <div class="footer-payments">
+              <img src="assets/images/home/payment-options.png" alt="Accepted Payment Methods" />
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <div class="footer-social">
+              <img src="assets/icons/facebook-icon.svg" alt="Facebook" />
+              <img src="assets/icons/twitter-icon.svg" alt="Twitter" />
+              <img src="assets/icons/instagram-icon.svg" alt="Instagram" />
+              <img src="assets/icons/yt-icon.svg" alt="YouTube" />
+            </div>
+
+            <div class="footer-copyright">© 2025 Abokichi.</div>
+          </div>
+        </footer>
+      </section>
+    </div>
+    
+    <script src="js/data.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
 </html>
