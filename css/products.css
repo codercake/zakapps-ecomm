@@ -1,4 +1,3 @@
-/* Banner Section */
 .banner-section {
   position: relative;
   width: 100%;
@@ -33,16 +32,13 @@
   letter-spacing: 1px;
 }
 
-/* Product Content */
 .product-content {
   background: #f5f5f5;
   width: 100%;
   padding: 30px;
-  /* Calculate minimum height to fill viewport below banner */
   min-height: calc(100vh - 240px);
 }
 
-/* Filter Controls Bar */
 .filter-controls-bar {
   width: 100%;
   display: flex;
@@ -67,7 +63,7 @@
   border: none;
   padding: 8px 12px;
   cursor: pointer;
-  border-radius: 4px; /* Added aesthetic touch */
+  border-radius: 4px;
 }
 
 .filter-btn img {
@@ -127,7 +123,7 @@
   background: #f5f5f5;
   cursor: pointer;
   padding: 8px 5px 8px 10px;
-  appearance: none; /* Remove default browser dropdown arrow */
+  appearance: none; 
   -webkit-appearance: none;
   -moz-appearance: none;
 }
@@ -136,10 +132,9 @@
   position: absolute;
   width: 14px;
   right: 5px;
-  pointer-events: none; /* Allows click to pass through to the select */
+  pointer-events: none; 
 }
 
-/* Content Separator */
 .content-separator {
   border: none;
   height: 1px;
@@ -149,7 +144,6 @@
   transition: opacity 0.4s ease, height 0.4s ease, margin 0.4s ease;
 }
 
-/* Filter Panel */
 .filter-panel {
   display: flex;
   gap: 100px;
@@ -164,7 +158,7 @@
 }
 
 .filter-panel.active {
-  max-height: 1000px; /* Large enough value to show content */
+  max-height: 1000px;
   opacity: 1;
   padding: 25px;
   margin-bottom: 20px;
@@ -207,7 +201,6 @@
   border-radius: 4px;
 }
 
-/* Product Grid (Default - Grid View) */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -215,7 +208,6 @@
   margin-top: 40px;
 }
 
-/* Product Card */
 .product-card {
   background: #fff;
   cursor: pointer;
@@ -225,7 +217,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  border-radius: 8px; /* Added aesthetic touch */
+  border-radius: 8px; 
   overflow: hidden;
 }
 
@@ -277,7 +269,7 @@
 .price-row .current {
   font-size: 14px;
   font-weight: 700;
-  color: #0b3d2e; /* Dark green for current price */
+  color: #0b3d2e; 
 }
 
 .price-row .old {
@@ -289,7 +281,7 @@
 }
 
 .rating-row .stars {
-  color: #ffc107; /* Gold color for stars */
+  color: #ffc107; 
   display: flex;
   gap: 2px;
 }
@@ -304,7 +296,6 @@
   color: #555;
 }
 
-/* No Products Message */
 .no-products-message {
   display: none;
   text-align: center;
@@ -318,15 +309,13 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* List View FIX */
 .product-grid.list-view {
-  /* Crucial: Override the default grid columns to ensure full width */
   grid-template-columns: 1fr; 
   display: flex;
   flex-direction: column;
   gap: 25px;
   margin-top: 30px;
-  width: 100%; /* FIX: Ensure container takes full width */
+  width: 100%; 
 }
 
 .product-grid.list-view .product-card {
@@ -338,7 +327,6 @@
   text-align: left;
   height: auto;
   min-height: 200px;
-  /* FIX: Ensure the card takes the full width and removes max-width constraints */
   width: 100%;
   max-width: none;
 }
@@ -493,7 +481,6 @@
   font-size: 14px;
 }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -559,7 +546,7 @@
   }
   
   .product-grid.list-view .product-card img {
-    width: 100%; /* Allow image to take full card width in mobile column layout */
+    width: 100%; 
     height: 250px;
     object-fit: cover;
   }
